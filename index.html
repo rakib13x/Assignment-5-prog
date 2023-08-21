@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/abc77f5644.js" crossorigin="anonymous"></script>
+    <title>SummerSale</title>
+</head>
+<body class="bg-gray-200">
+    <section class="h-[600px] w-full flex items-center justify-around" style="background-color: #F9F6E2;">
+        <div class="space-y-6 ">
+            <p class="ml-[100px]">---SALE FEVER---</p>
+            <h2 class="text-[3.6rem] font-bold">
+                Purchase TK 200 or <br>
+                above & get <span class="text-pink-500">20% off</span>
+            </h2>
+            <div class="ml-[100px] flex items-center space-x-2">
+                <p>Use Promo Code</p>
+                <button class="h-8 w-20 bg-pink-500 rounded text-white" onclick="applyCoupon()">SELL200</button>
+            </div>  
+        </div>
+        <div>
+            <img src="./images/Summer 1.png" alt="logo" class="w-[354px] h-[354px] bg-cover bg-center">
+        </div>
+    </section>
+
+    <!-- Kitchenware -->
+<section class="ml-[200px] bg-gray-200 space-y-2 mt-[70px]" >
+        <div class="text-2xl font-bold ml-[35px]">
+            KitchenWare
+        </div>
+        <div class="flex">
+            <!-- product-1        -->
+            <div class=" product-card flex justify-center items-center flex-wrap gap-6 p-8"
+            data-product-index="0"  data-product-name="Product 1" data-product-price="150.00"
+            >
+                <div class="w-[250px] h-auto bg-white flex flex-col justify-between rounded-md
+                    overflow-hidden shadow-sm relative text-center"
+                >
+                
+                    <div class="bg-gray-200 p-10 m-5">
+                        <img 
+                            src="./images/prod1.png" 
+                            alt=""
+                            class="w-full h-full justify-center"
+                        >
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="text-amber-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <h2 class="mb-2 font-bold text-lg">
+                            K. Accessories
+                        </h2>
+                        <p>150.00 TK</p>
+                    </div>
+                </div>
+            </div>
+            <!-- product-2 -->
+            <div class=" product-card bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8"
+            data-product-index="1" data-product-name="Product 1" data-product-price="25.00"
+            >
+                <div class="w-[250px] h-auto bg-white flex flex-col justify-between rounded-md
+                        overflow-hidden shadow-sm relative text-center"
+                    >
+
+                <div class="bg-gray-200 p-10 m-5">
+                        <img 
+                            src="./images/prod2.png"
+                            alt=""
+                            class="w-full h-full justify-center"
+                        >
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="text-amber-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <h2 class="mb-2 font-bold text-lg">
+                            K. Accessories
+                        </h2>
+                        <p>25.00 TK</p>
+                    </div>
+                </div>
+            </div>
+            <!-- product-3 -->
+            <div class=" product-card bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8"
+                data-product-index="2" data-product-name="Product 1" data-product-price="49.00"
+            >
+            <div class="w-[250px] h-auto bg-white flex flex-col justify-between rounded-md
+                overflow-hidden shadow-sm relative text-center"
+            >
+                <div class="bg-gray-200 p-10 m-5">
+                    <img 
+                    src="./images/prod3.png" 
+                    alt=""
+                    class="w-full h-full justify-center"
+                    >
+                </div>
+                <div class="p-5">
+                    <div class="text-amber-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <h2 class="mb-2 font-bold text-lg">
+                        Home Cooker
+                    </h2>
+                    <p>49.00 TK</p>
+                </div>
+            </div>
+            </div>
+    <div class="">
+        <div class="w-[342px] h-[148px] bg-white mt-7 p-4 space-y-4 rounded-md">
+            <p>Have Coupon?</p>
+            <div class="flex items-center">
+                <input type="text" id="couponInput" placeholder="Coupon code" class="border rounded-l p-2 pl-4 text-gray-900">
+                <button class="h-11 w-20 bg-pink-500 rounded-r text-white">Apply</button>
+            </div>
+        </div>
+        <div class="w-[342px] h-auto bg-white flex-col mt-6 p-2">
+            <div class="mt-5 mb-5 pb-5 space-y-3 border-b border-gray" id="selectedProductsList">
+                <!-- Selected product names and prices will be dynamically added here -->
+            </div>
+            <div class="pb-5 space-y-3 border-b border-gray">
+                <p>Total price: <span id="totalPriceDisplay">0.00 TK</span></p>
+                <p>Discount: <span id="discountDisplay">0%</span></p>
+                <p>Total: <span id="discountedTotalDisplay">0.00 TK</span></p>
+            </div>
+            
+            <button class="btn h-10 w-full bg-pink-500 rounded mt-5 text-white" onclick="my_modal_1.showModal()">Make Purchase</button>
+            <dialog id="my_modal_1" class="modal h-[540px] w-[540px] rounded-md">
+            <form method="dialog" class="modal-box flex-col rounded ml-[20px]">
+                <div class=" flex justify-center items-center flex-wrap gap-6 p-8"
+            >
+            <div class="w-[250px] h-[400px] bg-white flex flex-col justify-between rounded
+                overflow-hidden shadow-sm relative text-center space-y-4"
+            >
+                <div class=" p-10 m-5">
+                    <img 
+                    src="./images/congo.png" 
+                    alt=""
+                    class="w-full h-full justify-center"
+                    >
+                </div>
+                    <h2 class="mb-2 font-bold text-3xl">
+                        Congratulations
+                    </h2>
+                    <p>You Purchase The Product</p>
+                    <div class="modal-action">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn h-8 w-full bg-pink-500 text-white rounded" onclick="goHome()">Go home</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </form>
+            </dialog>
+        </div>
+        
+    </div>
+    </div>
+    
+    <div>
+    
+    </div>
+</section>
+
+<!-- Sportswear -->
+<section class="ml-[200px] bg-gray-200 space-y-2 mt-[70px]" >
+    <div class="text-2xl font-bold ml-[35px]">
+        Sportswear
+    </div>
+    <div class="flex">        
+        <div class=" flex justify-center items-center flex-wrap gap-6 p-8">
+        <div class="w-[250px] h-auto bg-white flex flex-col justify-between rounded-md
+        overflow-hidden shadow-sm relative text-center"
+        >
+        
+       <div class="bg-gray-200 p-10 m-5">
+        <img 
+            src="./images/prod4.png" 
+            alt=""
+            class="w-full h-full justify-center"
+            >
+        </div>
+        
+        <div class="p-5">
+            <div class="text-amber-500">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <h2 class="mb-2 font-bold text-lg">
+                Sports Back Cap
+            </h2>
+            <p>49.00 TK</p>
+        </div>
+    </div>
+</div>
+<div class="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
+    <div class="w-[250px] h-auto bg-white flex flex-col justify-between rounded-md
+            overflow-hidden shadow-sm relative text-center"
+        >
+
+       <div class="bg-gray-200 p-10 m-5">
+        <img 
+        src="./images/prod5.png" 
+        alt=""
+        class="w-full h-full justify-center"
+        >
+    </div>
+    
+    <div class="p-5">
+        <div class="text-amber-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+        <h2 class="mb-2 font-bold text-lg">
+            Full Jersey Set
+        </h2>
+                <p>69.00 TK</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
+        <div class="w-[250px] h-auto bg-white flex flex-col justify-between rounded-md
+        overflow-hidden shadow-sm relative text-center"
+        >
+        
+        <div class="bg-gray-200 p-10 m-5">
+            <img 
+            src="./images/prod6.png" 
+            alt=""
+            class="w-full h-full justify-center"
+            >
+        </div>
+        
+        <div class="p-5">
+            <div class="text-amber-500">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <h2 class="mb-2 font-bold text-lg">
+                Sports cates
+            </h2>
+            <p>159.00 TK</p>
+        </div>
+    </div>
+</div>
+</section>
+    
+</body>
+
+
+
+
+<script src="./script1.js"></script>
+</body>
+</html>
